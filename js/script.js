@@ -13,10 +13,10 @@ const bici = [
     }
     ];
 
-// Creo il nuovo Array
+// Creo il nuovo array
 const pesi = [];
 
-// Riempio il nuovo Array
+// Riempio il nuovo array
 for (let i = 0; i < bici.length; i++) {
     pesi.push({ nome: bici[i].nome, peso: bici[i].peso }); // pesi.push(bici[i])
 }
@@ -56,10 +56,33 @@ const squadre = [
     falli_subiti : 0},   
 ];
 
+//Creo una funzione per generare un numero casuale
+const generaNumeroCasuale = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+//Ciclo l'array e imposto condizione se valore = a 0
+for (let i = 0; i < squadre.length; i++) {
+for (let prop in squadre[i]) {
+    if (squadre[i][prop] === 0) {
+        squadre[i][prop] = generaNumeroCasuale(1, 100);
+    }
+}
+}
+
 // Creo un nuovo array
 const nomiFalli = [];
 
+//Ciclo l'array squadre 
+for (let i = 0; i < squadre.length; i++) {
 
+//Metto nell'array i nomi e i falli subiti
+nomiFalli.push({ nome: squadre[i].nome, falli_subiti: squadre[i].falli_subiti });
+}
+
+console.log(nomiFalli);
 
 // // Snack 3
 // Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b). La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
+// a < bici
+// []
+
+// return
